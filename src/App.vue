@@ -1,15 +1,42 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <i class="gg-youtube"></i>
-  </nav>
-  <router-view />
+  <div>
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+      <i class="gg-youtube"></i>
+      <div>
+        <p>Raised</p>
+        <VarButton class="md-raised" disabled>Disabled</VarButton>
+        <var-button
+          color="linear-gradient(to right, #69dbaa, #3a7afe)"
+          text-color="#fff"
+        >
+          使用渐变
+        </var-button>
+        <var-button @click="handleClick">说你好</var-button>
+      </div>
+    </nav>
+    <router-view />
+  </div>
 </template>
+
+<script>
+import { Snackbar } from "@varlet/ui";
+import "@varlet/ui/es/snackbar/style/index";
+
+export default {
+  name: "App",
+  methods: {
+    handleClick() {
+      Snackbar("你好!");
+    },
+  },
+};
+</script>
 
 <style lang="sass">
 #app
-  font-family: Avenir, Helvetica, Arial, sans-serif
+  font-family: Roboto, Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   text-align: center
