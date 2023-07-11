@@ -11,6 +11,7 @@
     "@varlet/ui": "^2.8.3",
     "axios": "^1.4.0",
     "core-js": "^3.8.3",
+    "gsap": "^3.12.2",
     "jquery": "^3.7.0",
     "unplugin-auto-import": "^0.15.0",
     "unplugin-vue-components": "^0.25.1",

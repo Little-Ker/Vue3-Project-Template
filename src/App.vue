@@ -14,6 +14,7 @@ import {
   Snackbar 
 } from '@varlet/ui'
 import '@varlet/ui/es/snackbar/style/index'
+import gsap from 'gsap'
 
 export default {
   name: 'App',
@@ -30,6 +31,18 @@ export default {
     handleClick() {
       Snackbar('你好!')
       window.$('.view').addClass('test')
+
+      gsap.timeline().to('.view', {
+        duration: 3,
+        alpha: 0,
+        delay: 1,
+      }).to('.view', {
+        duration: 3,
+        alpha: 1,
+        onComplete: () => {
+          console.log('over')
+        },
+      })
     },
   },
 }
