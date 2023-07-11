@@ -17,6 +17,7 @@
       </div>
     </nav>
     <router-view />
+    <Button @click="handleClick">Test</Button>
   </div>
 </template>
 
@@ -29,6 +30,7 @@ export default {
   methods: {
     handleClick() {
       Snackbar("你好!");
+      window.$(".view").addClass("test");
     },
   },
 };
