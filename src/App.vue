@@ -1,45 +1,38 @@
 <template>
-  <div>
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-      <i class="gg-youtube"></i>
-      <div>
-        <p>Raised</p>
-        <VarButton class="md-raised" disabled>Disabled</VarButton>
-        <var-button
-          color="linear-gradient(to right, #69dbaa, #3a7afe)"
-          text-color="#fff"
-        >
-          使用渐变
-        </var-button>
-        <var-button @click="handleClick">说你好</var-button>
-      </div>
-    </nav>
-    <router-view />
-    <Button @click="handleClick">Test</Button>
-  </div>
+    <div>
+        <Button @click="handleClick">Test</Button>
+        <Navbar />
+        <div class="view">
+            <router-view />
+        </div>
+    </div>
 </template>
 
 <script>
-import { Snackbar } from "@varlet/ui";
-import "@varlet/ui/es/snackbar/style/index";
+import Navbar from '@/components/Navbar.vue'
+import {
+  Snackbar 
+} from '@varlet/ui'
+import '@varlet/ui/es/snackbar/style/index'
 
 export default {
-  name: "App",
-  methods: {
-    handleClick() {
-      Snackbar("你好!");
-      window.$(".view").addClass("test");
-    },
+  name: 'App',
+  components: {
+    Navbar,
   },
   mounted() {
-    const api = "https://randomuser.me/api";
+    const api = 'https://randomuser.me/api'
     this.axios.get(api).then((response) => {
-      console.log(response.data);
-    });
+      console.log(response.data)
+    })
   },
-};
+  methods: {
+    handleClick() {
+      Snackbar('你好!')
+      window.$('.view').addClass('test')
+    },
+  },
+}
 </script>
 
 <style lang="sass">
@@ -49,16 +42,21 @@ export default {
   -moz-osx-font-smoothing: grayscale
   text-align: center
   color: #2c3e50
-  background: $blue
+  width: 100%
   +desktop
-    background: #aaa
+    // background: #aaa
     +set-flex(center, center)
+  .view
+    width: calc(100% - 260px)
+    min-height: 100vh
+    background-color: #FCFCFC
+    margin-left: 260px
 
-nav
-  padding: 30px
-  a
-    font-weight: bold
-    color: #2c3e50
-    &.router-link-exact-active
-      color: #42b983
+// nav
+//   padding: 30px
+//   a
+//     font-weight: bold
+//     color: #2c3e50
+//     &.router-link-exact-active
+//       color: #42b983
 </style>
