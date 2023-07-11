@@ -33,6 +33,12 @@ export default {
       window.$(".view").addClass("test");
     },
   },
+  mounted() {
+    const api = "https://randomuser.me/api";
+    this.axios.get(api).then((response) => {
+      console.log(response.data);
+    });
+  },
 };
 </script>
 
