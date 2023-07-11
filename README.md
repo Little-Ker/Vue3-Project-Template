@@ -1,4 +1,4 @@
-# vue_stock_web
+# Vue3-Project-Template
 
 ## Project setup
 ```
