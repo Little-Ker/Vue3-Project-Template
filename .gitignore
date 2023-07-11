@@ -12,6 +12,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+yarn.lock
+package-lock.json
+*.lock.json
 
 # Editor directories and files
 .idea

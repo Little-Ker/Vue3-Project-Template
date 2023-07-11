@@ -1,7 +1,6 @@
 <template>
     <div>
         <Button @click="handleClick">Test</Button>
-        <Navbar />
         <div class="view">
             <router-view />
         </div>
@@ -9,7 +8,6 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
 import {
   Snackbar 
 } from '@varlet/ui'
@@ -18,9 +16,6 @@ import gsap from 'gsap'
 
 export default {
   name: 'App',
-  components: {
-    Navbar,
-  },
   mounted() {
     const api = 'https://randomuser.me/api'
     this.axios.get(api).then((response) => {
